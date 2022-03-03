@@ -53,8 +53,11 @@ The PWM frequency.
 address string (optional, default: 64)
 The address of the PCA9685 driver.
 
-host string (optional)
+host string (optional, default: localhost)
 The remote host address for the GPIO driver.
+
+port integer (optional, default: 8888)
+The port on which the GPIO driver is listening.
 
 # Examples
 In this section you find some real-life examples of how to use this sensor.
@@ -88,7 +91,7 @@ light:
 ```
 
 RGB LED CONNECTED TO THE GPIO PINS OF A REMOTE RASPBERRY PI.
-On the Raspberry Pi the pigpio daemon is running on the default port 6666.
+On the Raspberry Pi the pigpio daemon is running on the custom port 6666.
 
 ```yaml
 # Example configuration.yaml entry
@@ -98,4 +101,5 @@ light:
       - name: Lightstrip Sideboard
         driver: gpio
         host: 192.168.0.66
+        port: 6666
 ```
